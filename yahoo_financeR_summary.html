@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Summary of the yahoofinancer package</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="yahoo_financeR_summary_files/libs/clipboard/clipboard.min.js"></script>
+<script src="yahoo_financeR_summary_files/libs/quarto-html/quarto.js"></script>
+<script src="yahoo_financeR_summary_files/libs/quarto-html/popper.min.js"></script>
+<script src="yahoo_financeR_summary_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="yahoo_financeR_summary_files/libs/quarto-html/anchor.min.js"></script>
+<link href="yahoo_financeR_summary_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="yahoo_financeR_summary_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="yahoo_financeR_summary_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="yahoo_financeR_summary_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="yahoo_financeR_summary_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Summary of the yahoofinancer package</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>This document is a short summary of the functionalities of the yahoofinancer package. The information is taken from <a href="taken%20from%20https://blog.rsquaredacademy.com/introducing-yahoofinancer-fetch-data-from-yahoo-finance-api/">this blog post</a>. The main package of the package can be found <a href="https://yahoofinancer.rsquaredacademy.com/index.html">here (https://yahoofinancer.rsquaredacademy.com/index.html)</a>.</p>
+<section id="basic-set-up-and-functionalities" class="level2">
+<h2 class="anchored" data-anchor-id="basic-set-up-and-functionalities">Basic set-up and functionalities</h2>
+<p>Information is queried based on a ticker.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(yahoofinancer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Paket 'yahoofinancer' wurde unter R Version 4.1.3 erstellt</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>aapl <span class="ot">&lt;-</span> Ticker<span class="sc">$</span><span class="fu">new</span>(<span class="st">'aapl'</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">validate</span>(<span class="st">'aapl'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<p>Based on this we can query current market data</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>aapl<span class="sc">$</span>quote<span class="sc">$</span>regularMarketPrice</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 134.76</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>aapl<span class="sc">$</span>summary_detail</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$maxAge
+[1] 1
+
+$priceHint
+[1] 2
+
+$previousClose
+[1] 133.41
+
+$open
+[1] 132.03
+
+$dayLow
+[1] 131.66
+
+$dayHigh
+[1] 134.92
+
+$regularMarketPreviousClose
+[1] 133.41
+
+$regularMarketOpen
+[1] 132.03
+
+$regularMarketDayLow
+[1] 131.66
+
+$regularMarketDayHigh
+[1] 134.92
+
+$dividendRate
+[1] 0.92
+
+$dividendYield
+[1] 0.0071
+
+$exDividendDate
+[1] 1667520000
+
+$payoutRatio
+[1] 0.1473
+
+$fiveYearAvgDividendYield
+[1] 0.98
+
+$beta
+[1] 1.27241
+
+$trailingPE
+[1] 22.05564
+
+$forwardPE
+[1] 19.99406
+
+$volume
+[1] 57809719
+
+$regularMarketVolume
+[1] 57809719
+
+$averageVolume
+[1] 82446450
+
+$averageVolume10days
+[1] 78012450
+
+$averageDailyVolume10Day
+[1] 78012450
+
+$bid
+[1] 134.53
+
+$ask
+[1] 134.57
+
+$bidSize
+[1] 800
+
+$askSize
+[1] 1100
+
+$marketCap
+[1] 2.143775e+12
+
+$fiftyTwoWeekLow
+[1] 124.17
+
+$fiftyTwoWeekHigh
+[1] 179.61
+
+$priceToSalesTrailing12Months
+[1] 5.436529
+
+$fiftyDayAverage
+[1] 139.5216
+
+$twoHundredDayAverage
+[1] 149.7922
+
+$trailingAnnualDividendRate
+[1] 0.9
+
+$trailingAnnualDividendYield
+[1] 0.006746121
+
+$currency
+[1] "USD"
+
+$tradeable
+[1] FALSE</code></pre>
+</div>
+</div>
+<p>We can also query key statistics and valuation data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>aapl<span class="sc">$</span>quote<span class="sc">$</span>regularMarketPrice</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 134.76</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>aapl<span class="sc">$</span>summary_detail</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$maxAge
+[1] 1
+
+$priceHint
+[1] 2
+
+$previousClose
+[1] 133.41
+
+$open
+[1] 132.03
+
+$dayLow
+[1] 131.66
+
+$dayHigh
+[1] 134.92
+
+$regularMarketPreviousClose
+[1] 133.41
+
+$regularMarketOpen
+[1] 132.03
+
+$regularMarketDayLow
+[1] 131.66
+
+$regularMarketDayHigh
+[1] 134.92
+
+$dividendRate
+[1] 0.92
+
+$dividendYield
+[1] 0.0071
+
+$exDividendDate
+[1] 1667520000
+
+$payoutRatio
+[1] 0.1473
+
+$fiveYearAvgDividendYield
+[1] 0.98
+
+$beta
+[1] 1.27241
+
+$trailingPE
+[1] 22.05564
+
+$forwardPE
+[1] 19.99406
+
+$volume
+[1] 57809719
+
+$regularMarketVolume
+[1] 57809719
+
+$averageVolume
+[1] 82446450
+
+$averageVolume10days
+[1] 78012450
+
+$averageDailyVolume10Day
+[1] 78012450
+
+$bid
+[1] 134.53
+
+$ask
+[1] 134.57
+
+$bidSize
+[1] 800
+
+$askSize
+[1] 1100
+
+$marketCap
+[1] 2.143775e+12
+
+$fiftyTwoWeekLow
+[1] 124.17
+
+$fiftyTwoWeekHigh
+[1] 179.61
+
+$priceToSalesTrailing12Months
+[1] 5.436529
+
+$fiftyDayAverage
+[1] 139.5216
+
+$twoHundredDayAverage
+[1] 149.7922
+
+$trailingAnnualDividendRate
+[1] 0.9
+
+$trailingAnnualDividendYield
+[1] 0.006746121
+
+$currency
+[1] "USD"
+
+$tradeable
+[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(purrr<span class="sc">::</span><span class="fu">map</span>(aapl<span class="sc">$</span>key_stats, <span class="st">'raw'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$maxAge
+NULL
+
+$priceHint
+[1] 2
+
+$enterpriseValue
+[1] 2.154618e+12
+
+$forwardPE
+[1] 19.99406
+
+$profitMargins
+[1] 0.2531
+
+$floatShares
+[1] 15891414476</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>aapl<span class="sc">$</span>valuation_measures</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        date enterprise_value enterprise_value_ebitda_ratio
+1 2021-12-31     2.963725e+12                  2.963725e+12
+2 2022-03-31     2.888888e+12                  2.888888e+12
+3 2022-06-30     2.269030e+12                  2.269030e+12
+4 2022-09-30     2.274841e+12                  2.274841e+12
+  enterprise_value_revenue_ratio forward_pe_ratio   market_cap     pb_ratio
+1                   2.963725e+12     2.963725e+12 2.963725e+12 2.963725e+12
+2                   2.888888e+12     2.888888e+12 2.888888e+12 2.888888e+12
+3                   2.269030e+12     2.269030e+12 2.269030e+12 2.269030e+12
+4                   2.274841e+12     2.274841e+12 2.274841e+12 2.274841e+12
+      pe_ratio    peg_ratio     ps_ratio
+1 2.963725e+12 2.963725e+12 2.963725e+12
+2 2.888888e+12 2.888888e+12 2.888888e+12
+3 2.269030e+12 2.269030e+12 2.269030e+12
+4 2.274841e+12 2.274841e+12 2.274841e+12</code></pre>
+</div>
+</div>
+<p>The price history can be queried like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>aapl<span class="sc">$</span><span class="fu">get_history</span>(<span class="at">start =</span> <span class="st">'2022-10-01'</span>, <span class="at">end =</span> <span class="st">'2022-10-14'</span>, <span class="at">interval =</span> <span class="st">'1d'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 date    volume   high    low   open  close adj_close
+1 2022-10-03 13:30:00 114311700 143.07 137.69 138.21 142.45  142.2141
+2 2022-10-04 13:30:00  87830100 146.22 144.26 145.03 146.10  145.8580
+3 2022-10-05 13:30:00  79471000 147.38 143.01 144.07 146.40  146.1575
+4 2022-10-06 13:30:00  68402200 147.54 145.22 145.81 145.43  145.1891
+5 2022-10-07 13:30:00  85925600 143.10 139.45 142.54 140.09  139.8580
+6 2022-10-10 13:30:00  74899000 141.89 138.57 140.42 140.42  140.1874
+7 2022-10-11 13:30:00  77033700 141.35 138.22 139.90 138.98  138.7498
+8 2022-10-12 13:30:00  70433700 140.36 138.16 139.13 138.34  138.1109
+9 2022-10-13 13:30:00 113224000 143.59 134.37 134.99 142.99  142.7532</code></pre>
+</div>
+</div>
+<p>Balance sheet information can be queried:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>aapl<span class="sc">$</span><span class="fu">get_balance_sheet</span>(<span class="st">'annual'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 x 24
+  end_date          cash short~1 net_r~2 inven~3 other~4 total~5 long_~6 prope~7
+  &lt;date&gt;           &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+1 2022-09-24 23646000000 2.47e10 6.09e10  4.95e9 2.12e10 1.35e11 1.21e11 5.25e10
+2 2021-09-25 34940000000 2.77e10 5.15e10  6.58e9 1.41e10 1.35e11 1.28e11 4.95e10
+3 2020-09-26 38016000000 5.29e10 3.74e10  4.06e9 1.13e10 1.44e11 1.01e11 4.53e10
+4 2019-09-28 48844000000 5.17e10 4.58e10  4.11e9 1.24e10 1.63e11 1.05e11 3.74e10
+# ... with 15 more variables: other_assets &lt;dbl&gt;, total_assets &lt;dbl&gt;,
+#   accounts_payable &lt;dbl&gt;, short_long_term_debt &lt;dbl&gt;,
+#   other_current_liab &lt;dbl&gt;, long_term_debt &lt;dbl&gt;, other_liab &lt;dbl&gt;,
+#   total_current_liabilities &lt;dbl&gt;, total_liab &lt;dbl&gt;, common_stock &lt;dbl&gt;,
+#   retained_earnings &lt;dbl&gt;, treasury_stock &lt;dbl&gt;,
+#   other_stockholder_equity &lt;dbl&gt;, total_stockholder_equity &lt;dbl&gt;,
+#   net_tangible_assets &lt;dbl&gt;, and abbreviated variable names ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>aapl<span class="sc">$</span><span class="fu">get_income_statement</span>(<span class="st">'annual'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 x 16
+  end_date   total_rev~1 cost_~2 gross~3 resea~4 selli~5 total~6 opera~7 total~8
+  &lt;date&gt;           &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt;
+1 2022-09-24     3.94e11 2.24e11 1.71e11 2.63e10 2.51e10 2.75e11 1.19e11 -3.34e8
+2 2021-09-25     3.66e11 2.13e11 1.53e11 2.19e10 2.20e10 2.57e11 1.09e11  2.58e8
+3 2020-09-26     2.75e11 1.70e11 1.05e11 1.88e10 1.99e10 2.08e11 6.63e10  8.03e8
+4 2019-09-28     2.60e11 1.62e11 9.84e10 1.62e10 1.82e10 1.96e11 6.39e10  1.81e9
+# ... with 7 more variables: ebit &lt;dbl&gt;, interest_expense &lt;dbl&gt;,
+#   income_before_tax &lt;dbl&gt;, income_tax_expense &lt;dbl&gt;,
+#   net_income_from_continuing_ops &lt;dbl&gt;, net_income &lt;dbl&gt;,
+#   net_income_applicable_to_common_shares &lt;dbl&gt;, and abbreviated variable
+#   names 1: total_revenue, 2: cost_of_revenue, 3: gross_profit,
+#   4: research_development, 5: selling_general_administrative,
+#   6: total_operating_expenses, 7: operating_income, ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>aapl<span class="sc">$</span><span class="fu">get_cash_flow</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 x 20
+  end_date   net_inc~1 depre~2 chang~3 change~4 change~5 chang~6 chang~7 total~8
+  &lt;date&gt;         &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+1 2022-09-24   9.98e10 1.11e10 1.00e10 -1.82e 9  9.93e 9  1.48e9 -8.39e9 1.22e11
+2 2021-09-25   9.47e10 1.13e10 2.98e 9 -1.01e10  1.40e10 -2.64e9 -6.15e9 1.04e11
+3 2020-09-26   5.74e10 1.11e10 6.52e 9  6.92e 9 -1.98e 9 -1.27e8  8.81e8 8.07e10
+4 2019-09-28   5.53e10 1.25e10 5.08e 9  2.45e 8 -2.55e 9 -2.89e8 -8.96e8 6.94e10
+# ... with 11 more variables: capital_expenditures &lt;dbl&gt;, investments &lt;dbl&gt;,
+#   other_cashflows_from_investing_activities &lt;int&gt;,
+#   total_cashflows_from_investing_activities &lt;dbl&gt;, dividends_paid &lt;dbl&gt;,
+#   net_borrowings &lt;dbl&gt;, other_cashflows_from_financing_activities &lt;int&gt;,
+#   total_cash_from_financing_activities &lt;dbl&gt;, change_in_cash &lt;dbl&gt;,
+#   repurchase_of_stock &lt;dbl&gt;, issuance_of_stock &lt;int&gt;, and abbreviated
+#   variable names 1: net_income, 2: depreciation, 3: change_to_netincome, ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>aapl<span class="sc">$</span>earnings_trend<span class="sc">$</span>earnings_estimate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        date period analyst avg_estimate low_estimate high_estimate
+1 2022-12-31     0q      27         1.95         1.71          2.12
+2 2023-03-31    +1q      26         1.49         1.32          1.69
+3 2023-09-30     0y      39         6.17         5.40          6.87
+4 2024-09-30    +1y      36         6.74         6.01          7.33
+5       &lt;NA&gt;    +5y      NA           NA           NA            NA
+6       &lt;NA&gt;    -5y      NA           NA           NA            NA
+  year_ago_eps
+1         2.10
+2         1.52
+3         6.11
+4         6.17
+5           NA
+6           NA</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>aapl<span class="sc">$</span>earnings_trend<span class="sc">$</span>revenue_estimate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        date period analyst avg_estimate low_estimate high_estimate
+1 2022-12-31     0q      23  1.21906e+11  1.12106e+11   1.29379e+11
+2 2023-03-31    +1q      23  9.84634e+10  8.96080e+10   1.06000e+11
+3 2023-09-30     0y      38  4.03286e+11  3.72904e+11   4.19743e+11
+4 2024-09-30    +1y      34  4.26839e+11  4.00515e+11   4.48569e+11
+5       &lt;NA&gt;    +5y      NA           NA           NA            NA
+6       &lt;NA&gt;    -5y      NA           NA           NA            NA
+  year_ago_revenue
+1      1.23945e+11
+2      9.72780e+10
+3      3.94328e+11
+4      4.03286e+11
+5               NA
+6               NA</code></pre>
+</div>
+</div>
+<p>Option data is offered:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(aapl<span class="sc">$</span>option_chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 x 16
+  expiration          option_type contra~1 strike curre~2 last_~3 change perce~4
+  &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+1 2023-01-20 00:00:00 call        AAPL230~     30 USD       103.  -0.180  -0.174
+2 2023-01-20 00:00:00 call        AAPL230~     35 USD        96.5  0       0    
+3 2023-01-20 00:00:00 call        AAPL230~     40 USD        93.2 -0.810  -0.862
+4 2023-01-20 00:00:00 call        AAPL230~     50 USD        83.8  0       0    
+5 2023-01-20 00:00:00 call        AAPL230~     55 USD        77.6  0       0    
+6 2023-01-20 00:00:00 call        AAPL230~     60 USD        72.6  0       0    
+# ... with 8 more variables: open_interest &lt;int&gt;, bid &lt;dbl&gt;, ask &lt;dbl&gt;,
+#   contract_size &lt;chr&gt;, last_trade_date &lt;dttm&gt;, implied_volatility &lt;dbl&gt;,
+#   in_the_money &lt;lgl&gt;, volume &lt;int&gt;, and abbreviated variable names
+#   1: contract_symbol, 2: currency, 3: last_price, 4: percent_change</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>aapl<span class="sc">$</span>option_expiration_dates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "2023-01-20" "2023-01-27" "2023-02-03" "2023-02-10" "2023-02-17"
+ [6] "2023-02-24" "2023-03-17" "2023-04-21" "2023-05-19" "2023-06-16"
+[11] "2023-07-21" "2023-08-18" "2023-09-15" "2023-10-20" "2023-12-15"
+[16] "2024-01-19" "2024-03-15" "2024-06-21" "2025-01-17" "2025-06-20"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>aapl<span class="sc">$</span>option_strikes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  30.0  35.0  40.0  45.0  50.0  55.0  60.0  65.0  70.0  75.0  80.0  85.0
+[13]  90.0  95.0 100.0 105.0 110.0 113.0 114.0 115.0 116.0 117.0 118.0 119.0
+[25] 120.0 121.0 122.0 123.0 124.0 125.0 126.0 127.0 128.0 129.0 130.0 131.0
+[37] 132.0 133.0 134.0 135.0 136.0 137.0 138.0 139.0 140.0 141.0 142.0 143.0
+[49] 144.0 145.0 146.0 147.0 148.0 149.0 150.0 152.5 155.0 157.5 160.0 162.5
+[61] 165.0 167.5 170.0 175.0 180.0 185.0 190.0 195.0 200.0 205.0 210.0 215.0
+[73] 220.0 225.0 230.0 235.0 240.0 245.0 250.0 255.0 260.0 265.0 270.0 275.0
+[85] 280.0 285.0 290.0 295.0 300.0 310.0 320.0</code></pre>
+</div>
+</div>
+<p>Data about holding patterns and recommendations is available:<br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>aapl<span class="sc">$</span>major_holders</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$maxAge
+[1] 1
+
+$insidersPercentHeld
+[1] 0.00072
+
+$institutionsPercentHeld
+[1] 0.6085
+
+$institutionsFloatPercentHeld
+[1] 0.60894
+
+$institutionsCount
+[1] 5498</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>aapl<span class="sc">$</span>recommendation_trend</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  period strong_buy buy hold sell strong_sell
+1     0m         11  21    6    0           0
+2    -1m         10  23    6    1           0
+3    -2m         11  25    6    1           0
+4    -3m         13  20    8    0           0</code></pre>
+</div>
+</div>
+</section>
+<section id="indices" class="level2">
+<h2 class="anchored" data-anchor-id="indices">Indices</h2>
+<p>The index class can be used to query index data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>nifty <span class="ot">=</span> Index<span class="sc">$</span><span class="fu">new</span>(<span class="st">'^NSEI'</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>nifty<span class="sc">$</span>summary_detail</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$language
+[1] "en-US"
+
+$region
+[1] "US"
+
+$quoteType
+[1] "INDEX"
+
+$typeDisp
+[1] "Index"
+
+$quoteSourceName
+[1] "Delayed Quote"
+
+$triggerable
+[1] TRUE
+
+$customPriceAlertConfidence
+[1] "HIGH"
+
+$currency
+[1] "INR"
+
+$firstTradeDateMilliseconds
+[1] 1.190001e+12
+
+$priceHint
+[1] 2
+
+$regularMarketPrice
+[1] 17894.85
+
+$regularMarketChangePercent
+[1] -0.3438847
+
+$marketState
+[1] "POSTPOST"
+
+$exchange
+[1] "NSI"
+
+$shortName
+[1] "NIFTY 50"
+
+$messageBoardId
+[1] "finmb_INDEXNSEI"
+
+$exchangeTimezoneName
+[1] "Asia/Kolkata"
+
+$exchangeTimezoneShortName
+[1] "IST"
+
+$gmtOffSetMilliseconds
+[1] 19800000
+
+$market
+[1] "in_market"
+
+$esgPopulated
+[1] FALSE
+
+$regularMarketChange
+[1] -61.75
+
+$regularMarketTime
+[1] 1673863315
+
+$regularMarketDayHigh
+[1] 18049.65
+
+$regularMarketDayRange
+[1] "17853.65 - 18049.65"
+
+$regularMarketDayLow
+[1] 17853.65
+
+$regularMarketVolume
+[1] 0
+
+$regularMarketPreviousClose
+[1] 17956.6
+
+$bid
+[1] 0
+
+$ask
+[1] 0
+
+$bidSize
+[1] 0
+
+$askSize
+[1] 0
+
+$fullExchangeName
+[1] "NSE"
+
+$regularMarketOpen
+[1] 18033.15
+
+$averageDailyVolume3Month
+[1] 234595
+
+$averageDailyVolume10Day
+[1] 249300
+
+$fiftyTwoWeekLowChange
+[1] 2711.449
+
+$fiftyTwoWeekLowChangePercent
+[1] 0.1785798
+
+$fiftyTwoWeekRange
+[1] "15183.4 - 18887.6"
+
+$fiftyTwoWeekHighChange
+[1] -992.75
+
+$fiftyTwoWeekHighChangePercent
+[1] -0.05256094
+
+$fiftyTwoWeekLow
+[1] 15183.4
+
+$fiftyTwoWeekHigh
+[1] 18887.6
+
+$fiftyDayAverage
+[1] 18295.59
+
+$fiftyDayAverageChange
+[1] -400.7363
+
+$fiftyDayAverageChangePercent
+[1] -0.02190344
+
+$twoHundredDayAverage
+[1] 17275.58
+
+$twoHundredDayAverageChange
+[1] 619.2695
+
+$twoHundredDayAverageChangePercent
+[1] 0.03584653
+
+$sourceInterval
+[1] 15
+
+$exchangeDataDelayedBy
+[1] 15
+
+$tradeable
+[1] FALSE
+
+$cryptoTradeable
+[1] FALSE
+
+$symbol
+[1] "^NSEI"</code></pre>
+</div>
+</div>
+<p>As for stocks, historical quotes of indices can be queried:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>nifty<span class="sc">$</span><span class="fu">get_history</span>(<span class="at">start =</span> <span class="st">'2022-10-20'</span>, <span class="at">interval =</span> <span class="st">'1d'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  date volume     high      low     open    close adj_close
+1  2022-10-20 03:45:00 249600 17584.15 17421.00 17423.10 17563.95  17563.95
+2  2022-10-21 03:45:00 277700 17670.15 17520.75 17622.85 17576.30  17576.30
+3  2022-10-24 12:45:00  45000 17777.55 17707.40 17736.35 17730.75  17730.75
+4  2022-10-25 03:45:00 251400 17811.50 17637.00 17808.30 17656.35  17656.35
+5  2022-10-27 03:45:00 324600 17783.90 17654.50 17771.40 17736.95  17736.95
+6  2022-10-28 03:45:00 250000 17838.90 17723.70 17756.40 17786.80  17786.80
+7  2022-10-31 03:45:00 227200 18022.80 17899.90 17910.20 18012.20  18012.20
+8  2022-11-01 03:45:00 349900 18175.80 18060.15 18130.70 18145.40  18145.40
+9  2022-11-02 03:45:00 270900 18178.75 18048.65 18177.90 18082.85  18082.85
+10 2022-11-03 03:45:00 213000 18106.30 17959.20 17968.35 18052.70  18052.70
+11 2022-11-04 03:45:00 267900 18135.10 18017.15 18053.40 18117.15  18117.15
+12 2022-11-07 03:45:00 314800 18255.50 18064.75 18211.75 18202.80  18202.80
+13 2022-11-09 03:45:00 307200 18296.40 18117.50 18288.25 18157.00  18157.00
+14 2022-11-10 03:45:00 256500 18103.10 17969.40 18044.35 18028.20  18028.20
+15 2022-11-11 03:45:00 378500 18362.30 18259.35 18272.35 18349.70  18349.70
+16 2022-11-14 03:45:00 301400 18399.45 18311.40 18376.40 18329.15  18329.15
+17 2022-11-15 03:45:00 250900 18427.95 18282.00 18362.75 18403.40  18403.40
+18 2022-11-16 03:45:00 219300 18442.15 18344.15 18398.25 18409.65  18409.65
+19 2022-11-17 03:45:00 200500 18417.60 18312.95 18358.70 18343.90  18343.90
+20 2022-11-18 03:45:00 198800 18394.60 18209.80 18382.95 18307.65  18307.65
+21 2022-11-21 03:45:00 213800 18262.30 18133.35 18246.40 18159.95  18159.95
+22 2022-11-22 03:45:00 177700 18261.85 18137.70 18179.15 18244.20  18244.20
+23 2022-11-23 03:45:00 178800 18325.40 18246.00 18325.20 18267.25  18267.25
+24 2022-11-24 03:45:00 204000 18529.70 18294.25 18326.10 18484.10  18484.10
+25 2022-11-25 03:45:00 205900 18534.90 18445.10 18528.45 18512.75  18512.75
+26 2022-11-28 03:45:00 206500 18614.25 18365.60 18430.55 18562.75  18562.75
+27 2022-11-29 03:45:00 195300 18678.10 18552.15 18552.45 18618.05  18618.05
+28 2022-11-30 03:45:00 345600 18816.05 18616.55 18625.70 18758.35  18758.35
+29 2022-12-01 03:45:00 325000 18887.60 18778.20 18871.95 18812.50  18812.50
+30 2022-12-02 03:45:00 254400 18781.95 18639.20 18752.40 18696.10  18696.10
+31 2022-12-05 03:45:00 288400 18728.60 18591.35 18719.55 18701.05  18701.05
+32 2022-12-06 03:45:00 217800 18654.90 18577.90 18600.65 18642.75  18642.75
+33 2022-12-07 03:45:00 200500 18668.30 18528.40 18638.85 18560.50  18560.50
+34 2022-12-08 03:45:00 202800 18625.00 18536.95 18570.85 18609.35  18609.35
+35 2022-12-09 03:45:00 215800 18664.70 18410.10 18662.40 18496.60  18496.60
+36 2022-12-12 03:45:00 193900 18521.55 18345.70 18402.15 18497.15  18497.15
+37 2022-12-13 03:45:00 187600 18617.25 18490.20 18524.40 18608.00  18608.00
+38 2022-12-14 03:45:00 208000 18696.10 18632.90 18671.25 18660.30  18660.30
+39 2022-12-15 03:45:00 183100 18652.90 18387.70 18614.40 18414.90  18414.90
+40 2022-12-16 03:45:00 277700 18440.95 18255.15 18319.10 18269.00  18269.00
+41 2022-12-19 03:45:00 154800 18431.65 18244.55 18288.10 18420.45  18420.45
+42 2022-12-20 03:45:00 169000 18404.90 18202.65 18340.30 18385.30  18385.30
+43 2022-12-21 03:45:00 187600 18473.35 18162.75 18435.15 18199.10  18199.10
+44 2022-12-22 03:45:00 195700 18318.75 18068.60 18288.80 18127.35  18127.35
+45 2022-12-23 03:45:00 221500 18050.45 17779.50 17977.65 17806.80  17806.80
+46 2022-12-26 03:45:00 176700 18084.10 17774.25 17830.40 18014.60  18014.60
+47 2022-12-27 03:45:00 214300 18149.25 17967.45 18089.80 18132.30  18132.30
+48 2022-12-28 03:45:00 193900 18173.10 18068.35 18084.75 18122.50  18122.50
+49 2022-12-29 03:45:00 281100 18229.70 17992.80 18045.70 18191.00  18191.00
+50 2022-12-30 03:45:00 192000 18265.25 18080.30 18259.10 18105.30  18105.30
+51 2023-01-02 03:45:00 256100 18215.15 18086.50 18131.70 18197.45  18197.45
+52 2023-01-03 03:45:00 208700 18251.95 18149.80 18163.20 18232.55  18232.55
+53 2023-01-04 03:45:00 235200 18243.00 18020.60 18230.65 18042.95  18042.95
+54 2023-01-05 03:45:00 269900 18120.30 17892.60 18101.95 17992.15  17992.15
+55 2023-01-06 03:45:00 238200 18047.40 17795.55 18008.05 17859.45  17859.45
+56 2023-01-09 03:45:00 257200 18141.40 17936.15 17952.55 18101.20  18101.20
+57 2023-01-10 03:45:00 283300 18127.60 17856.00 18121.30 17914.15  17914.15
+58 2023-01-11 03:45:00 259900 17976.35 17824.35 17924.25 17895.70  17895.70
+59 2023-01-12 03:45:00 227800 17945.80 17761.65 17920.85 17858.20  17858.20
+60 2023-01-13 03:45:00 256700 17999.35 17774.25 17867.50 17956.60  17956.60
+61 2023-01-16 10:01:55      0 18049.65 17853.65 18033.15 17894.85  17894.85</code></pre>
+</div>
+</div>
+</section>
+<section id="currencies" class="level2">
+<h2 class="anchored" data-anchor-id="currencies">Currencies</h2>
+<p>Currency data can be queried:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">currency_summary</span>(<span class="at">from =</span> <span class="st">"USD"</span>, <span class="at">to =</span> <span class="st">"EUR"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$language
+[1] "en-US"
+
+$region
+[1] "US"
+
+$quoteType
+[1] "CURRENCY"
+
+$typeDisp
+[1] "Currency"
+
+$quoteSourceName
+[1] "Delayed Quote"
+
+$triggerable
+[1] TRUE
+
+$customPriceAlertConfidence
+[1] "HIGH"
+
+$currency
+[1] "EUR"
+
+$shortName
+[1] "USD/EUR"
+
+$regularMarketChangePercent
+[1] 0.01083017
+
+$regularMarketPrice
+[1] 0.9236
+
+$fiftyDayAverage
+[1] 0.9538532
+
+$twoHundredDayAverage
+[1] 0.9707788
+
+$regularMarketChange
+[1] 0.0001000166
+
+$regularMarketDayHigh
+[1] 0.9255
+
+$regularMarketDayLow
+[1] 0.9192
+
+$regularMarketPreviousClose
+[1] 0.9235
+
+$bid
+[1] 0.9236
+
+$ask
+[1] 0.9241
+
+$regularMarketOpen
+[1] 0.9225
+
+$fiftyTwoWeekLow
+[1] 0.87
+
+$fiftyTwoWeekHigh
+[1] 1.0482
+
+$exchange
+[1] "CCY"
+
+$messageBoardId
+[1] "finmb_EUR_X"
+
+$exchangeTimezoneName
+[1] "Europe/London"
+
+$exchangeTimezoneShortName
+[1] "GMT"
+
+$gmtOffSetMilliseconds
+[1] 0
+
+$market
+[1] "ccy_market"
+
+$esgPopulated
+[1] FALSE
+
+$marketState
+[1] "REGULAR"
+
+$fiftyDayAverageChange
+[1] -0.03025317
+
+$fiftyDayAverageChangePercent
+[1] -0.0317168
+
+$twoHundredDayAverageChange
+[1] -0.0471788
+
+$twoHundredDayAverageChangePercent
+[1] -0.04859892
+
+$sourceInterval
+[1] 15
+
+$exchangeDataDelayedBy
+[1] 0
+
+$tradeable
+[1] FALSE
+
+$cryptoTradeable
+[1] FALSE
+
+$firstTradeDateMilliseconds
+[1] 1.070237e+12
+
+$priceHint
+[1] 4
+
+$regularMarketTime
+[1] 1673887310
+
+$regularMarketDayRange
+[1] "0.9192 - 0.9255"
+
+$regularMarketVolume
+[1] 0
+
+$bidSize
+[1] 0
+
+$askSize
+[1] 0
+
+$fullExchangeName
+[1] "CCY"
+
+$averageDailyVolume3Month
+[1] 0
+
+$averageDailyVolume10Day
+[1] 0
+
+$fiftyTwoWeekLowChange
+[1] 0.05360001
+
+$fiftyTwoWeekLowChangePercent
+[1] 0.06160921
+
+$fiftyTwoWeekRange
+[1] "0.87 - 1.0482"
+
+$fiftyTwoWeekHighChange
+[1] -0.1246
+
+$fiftyTwoWeekHighChangePercent
+[1] -0.1188704
+
+$symbol
+[1] "USDEUR=X"</code></pre>
+</div>
+</div>
+<p>with historical quotes as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>hist_data <span class="ot">=</span> <span class="fu">currency_converter</span>(<span class="st">'EUR'</span>, <span class="st">'USD'</span>, <span class="st">'2022-03-01'</span>,  <span class="fu">Sys.Date</span>())</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(hist_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   date     high      low     open    close volume adj_close
+225 2023-01-09 00:00:00 1.075951 1.065280 1.065632 1.065632      0  1.065632
+226 2023-01-10 00:00:00 1.075685 1.071318 1.073318 1.073318      0  1.073318
+227 2023-01-11 00:00:00 1.077470 1.072685 1.073895 1.073895      0  1.073895
+228 2023-01-12 00:00:00 1.083835 1.073802 1.076600 1.076600      0  1.076600
+229 2023-01-13 00:00:00 1.086779 1.078063 1.086024 1.086024      0  1.086024
+230 2023-01-16 16:41:50 1.087903 1.080497 1.084011 1.082720      0  1.082720</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hist_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        date     high      low     open    close volume adj_close
+1 2022-03-01 1.123217 1.110211 1.121466 1.121592      0  1.121592
+2 2022-03-02 1.114194 1.105852 1.113102 1.113276      0  1.113276
+3 2022-03-03 1.111605 1.103984 1.111358 1.111235      0  1.111235
+4 2022-03-04 1.106929 1.089004 1.106929 1.106684      0  1.106684
+5 2022-03-07 1.093075 1.080859 1.087394 1.087453      0  1.087453
+6 2022-03-08 1.092216 1.085117 1.086957 1.086531      0  1.086531</code></pre>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,96 @@
+---
+title: "Summary of the yahoofinancer package"
+format: html
+editor: visual
+---
+
+This document is a short summary of the functionalities of the yahoofinancer package. The information is taken from [this blog post](taken from https://blog.rsquaredacademy.com/introducing-yahoofinancer-fetch-data-from-yahoo-finance-api/). The main package of the package can be found [here (https://yahoofinancer.rsquaredacademy.com/index.html)](https://yahoofinancer.rsquaredacademy.com/index.html).
+
+## Basic set-up and functionalities
+
+Information is queried based on a ticker.
+
+```{r}
+library(yahoofinancer)
+aapl <- Ticker$new('aapl')
+validate('aapl')
+```
+
+Based on this we can query current market data
+
+```{r}
+aapl$quote$regularMarketPrice
+aapl$summary_detail
+```
+
+We can also query key statistics and valuation data:
+
+```{r}
+aapl$quote$regularMarketPrice
+aapl$summary_detail
+head(purrr::map(aapl$key_stats, 'raw'))
+aapl$valuation_measures
+```
+
+The price history can be queried like this:
+
+```{r}
+aapl$get_history(start = '2022-10-01', end = '2022-10-14', interval = '1d')
+
+```
+
+Balance sheet information can be queried:
+
+```{r}
+aapl$get_balance_sheet('annual')
+aapl$get_income_statement('annual')
+aapl$get_cash_flow()
+aapl$earnings_trend$earnings_estimate
+aapl$earnings_trend$revenue_estimate
+```
+
+Option data is offered:
+
+```{r}
+head(aapl$option_chain)
+aapl$option_expiration_dates
+aapl$option_strikes
+```
+
+Data about holding patterns and recommendations is available:\
+
+```{r}
+aapl$major_holders
+aapl$recommendation_trend
+```
+
+## Indices
+
+The index class can be used to query index data:
+
+```{r}
+nifty = Index$new('^NSEI')
+nifty$summary_detail
+```
+
+As for stocks, historical quotes of indices can be queried:
+
+```{r}
+nifty$get_history(start = '2022-10-20', interval = '1d')
+```
+
+## Currencies
+
+Currency data can be queried:
+
+```{r}
+currency_summary(from = "USD", to = "EUR")
+```
+
+with historical quotes as follows:
+
+```{r}
+hist_data = currency_converter('EUR', 'USD', '2022-03-01',  Sys.Date())
+tail(hist_data)
+head(hist_data)
+```
