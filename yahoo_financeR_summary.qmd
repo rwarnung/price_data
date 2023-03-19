@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-This document is a short summary of the functionalities of the yahoofinancer package. The information is taken from [this blog post](taken from https://blog.rsquaredacademy.com/introducing-yahoofinancer-fetch-data-from-yahoo-finance-api/). The main package of the package can be found [here (https://yahoofinancer.rsquaredacademy.com/index.html)](https://yahoofinancer.rsquaredacademy.com/index.html).
+This document is a short summary of the functionalities of the yahoofinancer package. The information is taken from [this blog post](taken%20from%20https://blog.rsquaredacademy.com/introducing-yahoofinancer-fetch-data-from-yahoo-finance-api/). The main package of the package can be found [here (https://yahoofinancer.rsquaredacademy.com/index.html)](https://yahoofinancer.rsquaredacademy.com/index.html).
 
 ## Basic set-up and functionalities
 
